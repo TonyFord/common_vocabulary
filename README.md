@@ -42,6 +42,7 @@ It is an initiative of fair.coop members.
       type: 'Agent',
       id: String!,
       name: String!,
+			existenceDate: Date,
       location: [ Location ],
       image: String,
       note: String,
@@ -54,16 +55,14 @@ It is an initiative of fair.coop members.
 #### Agent.Person
     {
       type: 'Person',
-      subclassOf: Agent,
-      birthDate: Date
+      subclassOf: Agent
     }
 
 
 #### Agent.Organization
     {
       type: 'Organization',
-      subclassOf: Agent,
-      creationDate: Date
+      subclassOf: Agent
     }
 
 >Note: Agent is an abstract class. An agent should be instantiated as either a Person or an Organization.  When something refers to Agent, it should include both Persons and Organizations.   If people would like different types of organizations, we can add an OrganizationClassification or something similar when needed.
@@ -156,7 +155,7 @@ It is an initiative of fair.coop members.
       longitude: Decimal!,
       latitude: Decimal!,
       postalAddress: PostalAddress,
-      umap: Umap
+      umap: [Umap]
     }
 
 #### Location.PostalAddress
@@ -170,7 +169,7 @@ It is an initiative of fair.coop members.
 
 #### Location.Umap
     {
-      type: 'umap',
+      type: 'Umap',
       umapType: UmapType!,
       color: String,
       icon: String,
