@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agents Editor</title>
+    <link rel="stylesheet" href="./common_lib/bootstrap/bootstrap.min.css">
+    <style>
+      #odbj {
+        width:100%;
+      }
+      td {
+        background: honeydew;
+      }
+      tr td:first-child {
+        max-width:20%;
+        min-width:20%;
+
+      }
+      td[contenteditable] {
+        background: initial;
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="modal" id="PassphraseModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Enter Passphrase to unlock your private key</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p><input type="password" id="passphrase" value=""></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="LoadFromLocal()" data-dismiss="modal">Unlock</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" id="createNewAgentCollection" onclick="CreateNewAgentCollection()">Create new AgentCollection</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#PassphraseModal">Load from Local</button>
+        <button class="btn btn-primary d-none" id="storeToLocal" onclick="StoreToLocal();">Store to Local</button>
+      </div>
+    </div>
+    <div class="row">
+      <div id="obj" class="col">
+
+      </div>
+    </div>
+  </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='./common_lib/bootstrap/bootstrap.bundle.min.js'></script>
+<script src='./common_lib/functions/base.js'></script>
+<script src='./common_lib/functions/support.js'></script>
+<script src='./common_lib/functions/AgentsEditor.js'></script>
+<script src='./common_lib/classes/agentcollection.js'></script>
+<script src='./common_lib/classes/location.js'></script>
+<script src='./common_lib/classes/postaladdress.js'></script>
+<script src='./common_lib/classes/umap.js'></script>
+<script src='./common_lib/classes/agent.js'></script>
+<script src='./common_lib/classes/contact.js'></script>
+<script src='./common_lib/classes/web.js'></script>
+
+<script>
+
+
+
+
+</script>
+</body>
+</html>

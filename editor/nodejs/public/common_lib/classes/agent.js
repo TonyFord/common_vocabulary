@@ -1,3 +1,4 @@
+
 class Agent {
 
   constructor(ValOptions) {
@@ -64,11 +65,11 @@ class AgentRelationship {
     FreezeProperty(this, property);
 
     // create properties
-    this.startDate    = '';
-    this.endDate      = '';
-    this.subject      = [/*Agent                */];
-    this.object       = [/*Agent                */];
-    this.relationship = [/*AgentRelationshipRole*/];
+    this.startDate        = '';
+    this.endDate          = '';
+    this.subject          = { 'id': '' };
+    this.object           = { 'id': '', 'postURI' : '' };
+    this.relationshipRole = [/*AgentRelationshipRole*/];
 
   }
 }
